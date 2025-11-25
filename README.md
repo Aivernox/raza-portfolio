@@ -89,59 +89,13 @@ primary: {
 5. **Testimonials** - Client feedback
 6. **Contact** - Contact form and social links
 
-## 🚢 Deployment to Vercel
+## 🚢 Deployment
 
-This portfolio is **100% ready for Vercel deployment**. Follow these steps:
+The easiest way to deploy is using [Vercel](https://vercel.com):
 
-### Option 1: Deploy via Vercel Dashboard (Recommended)
-
-1. **Push your code to GitHub:**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin <your-github-repo-url>
-   git push -u origin main
-   ```
-
-2. **Deploy to Vercel:**
-   - Go to [vercel.com](https://vercel.com)
-   - Sign in with your GitHub account
-   - Click "New Project"
-   - Import your GitHub repository
-   - Vercel will automatically detect Next.js
-   - Click "Deploy" (no configuration needed!)
-
-### Option 2: Deploy via Vercel CLI
-
-1. **Install Vercel CLI:**
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Deploy:**
-   ```bash
-   vercel
-   ```
-
-3. **For production:**
-   ```bash
-   vercel --prod
-   ```
-
-### Environment Variables
-
-No environment variables are required for basic deployment. The portfolio works out of the box!
-
-### Build Settings
-
-Vercel will automatically:
-- Detect Next.js framework
-- Run `npm install`
-- Run `npm run build`
-- Deploy to production
-
-**The portfolio is production-ready and optimized for Vercel!**
+1. Push your code to GitHub
+2. Import your repository in Vercel
+3. Deploy with one click
 
 ## 📄 License
 

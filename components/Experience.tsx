@@ -67,7 +67,7 @@ const itemVariants = {
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-32 bg-gradient-to-b from-white via-gray-50/30 to-white">
+    <section id="experience" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -219,7 +219,7 @@ export default function Experience() {
                           >
                             <motion.span
                               className="text-accent-600 mr-3 mt-1.5"
-                              animate={{ rotate: [0, 10, -10, 0] }}
+                              animate={{ rotate: [0, 10, 0] }}
                               transition={{ delay: index * 0.2 + 0.7 + i * 0.1, duration: 0.5 }}
                             >
                               ✓

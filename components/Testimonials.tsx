@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Quote, Star, Sparkles } from 'lucide-react'
+import Image from 'next/image'
 
 const testimonials = [
   {
@@ -35,7 +36,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-32 bg-white">
+    <section className="py-32 bg-gradient-to-b from-white via-gray-50/30 to-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -81,11 +82,12 @@ export default function Testimonials() {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
-                  <img
+                <div className="relative w-14 h-14 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
                 <div>

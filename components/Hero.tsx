@@ -6,17 +6,19 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      {/* Premium Background with Subtle Patterns */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,113,227,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,113,227,0.08),transparent_50%)]"></div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-accent-50/30">
+      {/* Premium Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgb(0, 0, 0) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }}></div>
       </div>
       
-      {/* Animated Background Orbs - Subtle Apple Style */}
+      {/* Animated Background Orbs - Apple Style */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-100/30 rounded-full mix-blend-multiply filter blur-3xl"
+          className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-200/20 rounded-full mix-blend-multiply filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -29,7 +31,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent-200/20 rounded-full mix-blend-multiply filter blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent-300/15 rounded-full mix-blend-multiply filter blur-3xl"
           animate={{
             scale: [1, 1.3, 1],
             x: [0, -50, 0],
@@ -50,30 +52,29 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-8"
+            className="relative"
           >
-            {/* Profile Picture - Premium Design */}
+            {/* Profile Picture - Enhanced */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="relative"
+              className="mb-10 relative"
             >
-              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-4 ring-accent-100/50 shadow-2xl">
+              <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden ring-4 ring-white shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
                   alt="Malik Muhammad Raza"
                   fill
                   className="object-cover"
-                  priority
                 />
               </div>
               <motion.div
-                className="absolute -bottom-2 -right-2 w-12 h-12 bg-accent-600 rounded-full flex items-center justify-center shadow-lg"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-2 -right-2 w-16 h-16 bg-accent-600 rounded-full flex items-center justify-center shadow-lg"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
-                <Sparkles className="text-white" size={20} />
+                <Sparkles className="text-white" size={24} />
               </motion.div>
             </motion.div>
 
@@ -81,30 +82,30 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 glass-effect rounded-full"
+              className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 glass-effect rounded-full shadow-sm"
             >
               <Sparkles className="text-accent-600" size={16} />
-              <span className="text-sm font-medium text-gray-700">iOS Developer</span>
+              <span className="text-sm font-semibold text-gray-800">iOS Developer</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-6xl md:text-7xl lg:text-8xl font-semibold leading-[1.1] tracking-tight"
+              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-[1.05] tracking-tight"
             >
               Hi, I'm{' '}
-              <span className="text-gradient block mt-2">Malik Muhammad Raza</span>
+              <span className="text-gradient block mt-3">Malik Muhammad Raza</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-2xl md:text-3xl text-gray-600 leading-relaxed font-light max-w-2xl"
+              className="text-xl md:text-2xl lg:text-3xl text-gray-700 mb-12 leading-relaxed font-light max-w-2xl"
             >
               Professional iOS Developer with{' '}
-              <span className="font-medium text-gray-900">4+ years</span> of experience
+              <span className="font-semibold text-gray-900">4+ years</span> of experience
               crafting beautiful, performant mobile applications.
             </motion.p>
 
@@ -112,12 +113,12 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-col sm:flex-row gap-4"
             >
               <motion.a
                 href="/resume.pdf"
                 download
-                className="apple-button-primary inline-flex items-center justify-center gap-2"
+                className="apple-button-primary inline-flex items-center justify-center gap-2 text-base px-8 py-4"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -127,7 +128,7 @@ export default function Hero() {
 
               <motion.a
                 href="#projects"
-                className="apple-button-secondary inline-flex items-center justify-center gap-2"
+                className="apple-button-secondary inline-flex items-center justify-center gap-2 text-base px-8 py-4"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -148,7 +149,7 @@ export default function Hero() {
               {/* iPhone 15 Pro Frame - Modern Design */}
               <motion.div
                 className="relative w-[340px] md:w-[420px] mx-auto"
-                animate={{ y: [0, -10, 0] }}
+                animate={{ y: [0, -12, 0] }}
                 transition={{
                   duration: 4,
                   repeat: Infinity,
@@ -156,7 +157,7 @@ export default function Hero() {
                 }}
               >
                 {/* iPhone Frame with Titanium Finish */}
-                <div className="relative bg-gradient-to-b from-gray-800 to-black rounded-[4rem] p-3 shadow-2xl">
+                <div className="relative bg-gradient-to-b from-gray-800 via-gray-900 to-black rounded-[4rem] p-3 shadow-2xl">
                   {/* Screen Bezel */}
                   <div className="bg-black rounded-[3.5rem] overflow-hidden">
                     {/* Dynamic Island - iPhone 15 Pro */}

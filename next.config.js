@@ -17,10 +17,7 @@ const nextConfig = {
       },
     ],
   },
-  // Optimize for production
-  swcMinify: true,
-  // Enable compression
-  compress: true,
 }
 
 module.exports = nextConfig
+

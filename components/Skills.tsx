@@ -54,7 +54,7 @@ const itemVariants = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-32 bg-gradient-to-b from-white via-gray-50/30 to-white">
+    <section id="skills" className="py-32 bg-gradient-to-b from-white via-gray-50/50 to-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

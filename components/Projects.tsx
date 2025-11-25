@@ -95,7 +95,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-32 bg-white">
+    <section id="projects" className="py-32 bg-gradient-to-b from-white via-accent-50/20 to-white">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -151,15 +151,17 @@ export default function Projects() {
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 + screenIndex * 0.1, duration: 0.6 }}
                       animate={{
                         y: [0, -10, 0],
                       }}
                       transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        delay: screenIndex * 0.3,
-                        ease: "easeInOut",
+                        opacity: { delay: index * 0.1 + screenIndex * 0.1, duration: 0.6 },
+                        y: {
+                          duration: 3,
+                          repeat: Infinity,
+                          delay: screenIndex * 0.3,
+                          ease: "easeInOut",
+                        },
                       }}
                     >
                       {/* iPhone 15 Pro Frame */}

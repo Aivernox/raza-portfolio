@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply antialiased;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-white text-gray-900;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-600 via-accent-500 to-accent-600;
+    background-size: 200% auto;
+    animation: gradient 3s ease infinite;
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/70 border border-white/20;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-dark {
+    @apply backdrop-blur-xl bg-black/40 border border-white/10;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+    transition-property: transform, box-shadow;
+  }
+  
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .apple-button {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-200;
+    @apply active:scale-95;
+  }
+  
+  .apple-button-primary {
+    @apply apple-button bg-accent-600 text-white hover:bg-accent-700;
+    box-shadow: 0 4px 14px 0 rgba(0, 113, 227, 0.3);
+  }
+  
+  .apple-button-secondary {
+    @apply apple-button bg-white text-gray-900 border border-gray-200 hover:bg-gray-50;
+  }
+}
+
